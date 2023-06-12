@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<info>
+    <id>integration_openai</id>
+    <name>OpenAI integration</name>
+    <summary>Integration of OpenAI's GPT-3 and DALL·E 2</summary>
+    <description><![CDATA[OpenAI integration provides a link reference provider to get
+OpenAI text prediction (with many models including GPT-3) and generate DALL·E 2 images.]]></description>
+    <version>1.0.10</version>
+    <licence>agpl</licence>
+    <author>Julien Veyssier</author>
+    <namespace>OpenAi</namespace>
+    <documentation>
+        <developer>https://github.com/julien-nc/integration_openai</developer>
+    </documentation>
+    <category>integration</category>
+    <category>dashboard</category>
+    <website>https://github.com/julien-nc/integration_openai</website>
+    <bugs>https://github.com/julien-nc/integration_openai/issues</bugs>
+    <screenshot>https://github.com/julien-nc/integration_openai/raw/main/img/screenshot1.jpg</screenshot>
+    <screenshot>https://github.com/julien-nc/integration_openai/raw/main/img/screenshot2.jpg</screenshot>
+    <screenshot>https://github.com/julien-nc/integration_openai/raw/main/img/screenshot3.jpg</screenshot>
+    <screenshot>https://github.com/julien-nc/integration_openai/raw/main/img/screenshot4.jpg</screenshot>
+    <dependencies>
+        <nextcloud min-version="26" max-version="28"/>
+    </dependencies>
+    <background-jobs>
+		<job>OCA\OpenAi\Cron\CleanupImageGenerations</job>
+	</background-jobs>
+	<commands>
+		<command>OCA\OpenAi\Command\CleanupImageGenerations</command>
+	</commands>
+    <settings>
+        <admin>OCA\OpenAi\Settings\Admin</admin>
+        <admin-section>OCA\OpenAi\Settings\AdminSection</admin-section>
+        <personal>OCA\OpenAi\Settings\Personal</personal>
+        <personal-section>OCA\OpenAi\Settings\PersonalSection</personal-section>
+    </settings>
+</info>
